@@ -1,0 +1,39 @@
+.centered-content {
+    display: flex;
+    justify-content: center; /* align horizontally */
+    align-items: center; /* align vertically */
+    height: 100%; /* take full height of the screen */
+  }
+
+  ion-title.ion-text-center {
+    width: 100%;
+    text-align: center;
+    color: var(--ion-color-limegreen); 
+  }
+
+  ion-content {
+    --background: limegreen;
+  }
+ 
+  .logo {
+    width: 100px; /* Adjust the width of the logo as needed */
+    height: auto;
+    margin-right: 10px; /* Add spacing between the logo and the title */
+  }
+
+  .toolbar {
+    display: flex;
+    align-items: center;
+  }
+
+  .title {
+    margin-left: auto;
+    margin-right: auto; 
+    
+  }
+
+  .logo-title-container {
+    display: flex;
+    align-items: center;
+    flex: 1; 
+  }
