@@ -24,7 +24,7 @@ import '@ionic/react/css/display.css';
 /* Theme variables */
 import './theme/variables.css';
 import Menu from './pages/Menu';
-import Example from './pages/testmenu';
+
 
 setupIonicReact();
 
@@ -48,14 +48,11 @@ const App: React.FC = () => {
         <IonRouterOutlet onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>
          <Route exact path="/" component={Home} />
          <Route exact path="/intro" component={Intro} />
-         <Route exact path="/test" component={Example} />
+        
          <Route path="/app" component={Menu} />
         </IonRouterOutlet>
       </IonReactRouter>
     </IonApp>
   );
 };
-
-
-export default App;
 
