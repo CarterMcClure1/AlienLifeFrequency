@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css?family=Orbitron:wght@400;700&display=swap');
+
 .centered-content {
     display: flex;
     justify-content: center; /* align horizontally */
@@ -12,13 +14,13 @@
   }
 
   ion-content {
-    --background: limegreen;
+    --background: radial-gradient(circle, #000000 0%, #0f1626 100%);
   }
  
   .logo {
-    width: 100px; /* Adjust the width of the logo as needed */
+    width: 50px; /* Adjust the width of the logo as needed */
     height: auto;
-    margin-right: 10px; /* Add spacing between the logo and the title */
+     /* Add spacing between the logo and the title */
   }
 
   .toolbar {
@@ -27,13 +29,56 @@
   }
 
   .title {
-    margin-left: auto;
-    margin-right: auto; 
+    text-align: center;
+    
+    font-family: fantasy;
+    color: #00ff00; /* Set the color to a greenish tone */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); /* Add a shadow effect */
     
   }
 
   .logo-title-container {
     display: flex;
     align-items: center;
-    flex: 1; 
+    justify-content: center;
   }
+  
+  .login-form {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90%;
+    max-width: 400px; /* Adjust the maximum width as needed */
+    padding: 20px;
+     
+    border-radius: 10px; /* Optional: add border radius */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Optional: add box shadow */
+  }
+
+  .container {
+    position: relative;
+    width: 200px; /* Adjust as needed */
+    height: 40px; /* Adjust as needed */
+}
+
+.toggle {
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+@font-face {
+  font-family: 'Orbitron';
+  src: url('./path/to/Orbitron-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+ion-card {
+  font-family: 'Orbitron', sans-serif;
+}
+
+.customOrbitronFont {
+  font-family: 'Orbitron', sans-serif;
+}
