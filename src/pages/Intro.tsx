@@ -4,7 +4,7 @@ import { homeOutline, newspaperOutline, logOutOutline, menuOutline} from 'ionico
 import './Intro.css';
 import { megaphoneOutline } from 'ionicons/icons';
 import { Route } from 'react-router';
-import Menu from "./Menu"
+
 import Home from './Home';
 
 const Intro: React.FC = () => {
