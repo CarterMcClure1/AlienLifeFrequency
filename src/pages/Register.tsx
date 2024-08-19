@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { IonContent, IonInput, IonButton, IonPage, IonHeader, IonToolbar, IonTitle, IonAlert, useIonRouter } from '@ionic/react';
+import { IonContent, IonInput, IonButton, IonPage, IonHeader, IonToolbar, IonTitle, IonAlert, useIonRouter, IonText } from '@ionic/react';
 import './Home.css';
 
 const Register: React.FC = () => {
@@ -62,6 +62,9 @@ const Register: React.FC = () => {
             onIonChange={(e) => setConfirmPassword(e.detail.value!)}
           ></IonInput>
         <IonButton expand="full" onClick={handleLogin}>Register</IonButton>
+        <IonText className="create-account-link">
+            Press <a href="/login">here</a> to go back to login
+          </IonText>
         </div>
       </IonContent>
       <IonAlert
