@@ -1,11 +1,13 @@
 import { Redirect, Route } from 'react-router-dom';
-import { IonApp, IonRouterOutlet, setupIonicReact } from '@ionic/react';
+import { IonApp, IonRouterOutlet, IonTabBar, IonTabButton, IonTabs, setupIonicReact } from '@ionic/react';
 import { IonReactRouter } from '@ionic/react-router';
 import React, { useEffect, useState } from 'react';
 import Home from './pages/Home';
 import Intro from './pages/Intro';
-import Login from "./pages/Login"
+import Extras from "./pages/Extras"
 import Register from "./pages/Register"
+import { IonIcon, IonLabel } from '@ionic/react';
+import { homeOutline, personOutline, settingsOutline, listOutline, logInOutline, musicalNote } from 'ionicons/icons';
 
 /* Core CSS required for Ionic components to work properly */
 import '@ionic/react/css/core.css';
@@ -25,7 +27,7 @@ import '@ionic/react/css/display.css';
 
 /* Theme variables */
 import './theme/variables.css';
-import Menu from './pages/Menu';
+import Music from "./pages/Music"
 
 
 setupIonicReact();
@@ -47,15 +49,36 @@ const App: React.FC = () => {
   return (
     <IonApp>
       <IonReactRouter>
-        <IonRouterOutlet onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>
-         <Route exact path="/" component={Home} />
-         <Route exact path="/intro" component={Intro} />
-         <Route exact path="/login" component={Login}  />
-         <Route exact path="/register" component={Register}  />
-         <Route path="/app" component={Menu} />
-        </IonRouterOutlet>
+        <IonTabs>
+          <IonRouterOutlet onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>
+            <Route exact path="/home" component={Home} />
+            <Route exact path="/intro" component={Intro} />
+            <Route exact path="/Extras" component={Extras} />
+            <Route exact path="/register" component={Register} />
+            <Route exact path="/music" component={Music} />
+            <Route exact path="/" render={() => <Redirect to="/home" />} />
+          </IonRouterOutlet>
+          <IonTabBar slot="bottom">
+            <IonTabButton tab="home" href="/home">
+              <IonIcon icon={homeOutline} />
+              <IonLabel>Home</IonLabel>
+            </IonTabButton>
+            <IonTabButton tab="Music" href="/music">
+              <IonIcon icon={musicalNote} />
+              <IonLabel>Music</IonLabel>
+            </IonTabButton>
+            <IonTabButton tab="extras" href="/extras">
+              <IonIcon icon={settingsOutline} />
+              <IonLabel>Extras</IonLabel>
+            </IonTabButton>
+            
+          </IonTabBar>
+        </IonTabs>
       </IonReactRouter>
     </IonApp>
   );
 };
+
+
+export default App;
 
