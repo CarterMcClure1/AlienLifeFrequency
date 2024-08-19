@@ -82,3 +82,24 @@ ion-card {
 .customOrbitronFont {
   font-family: 'Orbitron', sans-serif;
 }
+
+.social-icons-container {
+  display: flex;
+  justify-content: space-around;
+  padding: 20px;
+}
+
+.social-icon {
+  width: 70px;
+  height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ion-page {
+  background-image: url('../assets/newgalaxy.jpg'); /* Path relative to the CSS file */
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
