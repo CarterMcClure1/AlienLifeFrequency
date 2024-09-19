@@ -7,7 +7,7 @@ import newGalaxyBackground from '../assets/newgalaxy.jpg';  // Updated path
 const Home: React.FC = () => {
 
   const announcements = [
-    { id: 1, title: 'New Album Release!', content: 'Our new album "Dreamscape" is out now. Listen on all major platforms.' },
+    { id: 1, title: 'New Album Release!', content: 'Our new album "Veni Vidi Vici" is out now. Listen on all major platforms.' },
     { id: 2, title: 'Upcoming Tour', content: 'Exciting news! We\'re going on tour next month. Stay tuned for dates and locations.' },
     { id: 3, title: 'New Merch', content: 'Check out our exclusive merchandise collection available now on our website (Link Below).' },
   ];
