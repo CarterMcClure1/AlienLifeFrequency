@@ -37,7 +37,7 @@ const Extras: React.FC = () => {
             <IonCardTitle>About the Band</IonCardTitle>
           </IonCardHeader>
           <IonCardContent>
-            <p>Alien Life Frequency is a band that blends electronic music with alien-inspired themes...</p>
+           <p>We are Alien Life Frequency, Tab on bass and Francesco on keyboard, original beats, effects, and video. Sometimes we may have free-style, impromptu videos posted. Our music is original, created beat by beat and copyrighted. We provide an audio-visual creative experience. Our music is inspired by the universe and life beyond our own.</p>
           </IonCardContent>
         </IonCard>
 
