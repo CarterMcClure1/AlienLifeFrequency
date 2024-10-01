@@ -2,7 +2,9 @@ import React from 'react';
 import { IonContent, IonHeader, IonItem, IonIcon, IonPage, IonTitle, IonToolbar, IonButton, IonCard, IonCardTitle, IonCardContent, IonCardHeader } from '@ionic/react';
 import { megaphoneOutline, logoFacebook, logoInstagram, logoYoutube, cartOutline, musicalNotesOutline } from 'ionicons/icons';
 import './Home.css'; 
-import newGalaxyBackground from '../assets/newgalaxy.jpg';  // Updated path
+import alienLifeFreqLogo from '../assets/images/alienlifefreqapp.png';
+
+
 
 const Home: React.FC = () => {
 
@@ -18,14 +20,11 @@ const Home: React.FC = () => {
         <IonToolbar className="toolbar">
           <div className="logo-title-container">
             <IonTitle className="title">Alien Life Frequency</IonTitle>
-            <img src='./images/alienlifefreqapp.png' alt="image" className="logo" />
+            <img src={alienLifeFreqLogo} alt="Logo" className="logo" />
           </div>
         </IonToolbar>
       </IonHeader>
-      <IonContent fullscreen style={{ 
-        background: `url(${newGalaxyBackground}) no-repeat center center fixed`, 
-        backgroundSize: 'cover'
-      }}>
+      <IonContent fullscreen>
         <div className="announcements-box">
           <IonIcon icon={megaphoneOutline} className="announcement-icon" />
           <h2 className="box-title">Announcements</h2>
@@ -42,7 +41,7 @@ const Home: React.FC = () => {
             <IonCardTitle className="box-title2">Check Out Our Merch Store!</IonCardTitle>
           </IonCardHeader>
           <IonCardContent>
-            <IonButton href="https://iagomediaproduction.threadless.com/" target="_blank" className="social-icon" fill="clear">
+            <IonButton href="https://iagomediaproduction.threadless.com/collections/alien-life-frequency" target="_blank" className="social-icon" fill="clear">
               <IonIcon icon={cartOutline} style={{ fontSize: '80px', color: 'black' }} />
             </IonButton>
           </IonCardContent>
@@ -74,7 +73,5 @@ const Home: React.FC = () => {
 };
 
 export default Home;
-
-
 
 
