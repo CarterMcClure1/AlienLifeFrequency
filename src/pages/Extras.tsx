@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { IonContent, IonInput, IonButton, IonPage, IonHeader, IonToolbar, IonMenuButton, IonButtons, IonTitle, IonAlert, useIonRouter, IonCard, IonCardHeader, IonCardTitle, IonCardContent, IonItem, IonLabel, IonList, IonToggle, IonIcon } from '@ionic/react';
 import { callOutline, helpCircleOutline, informationCircleOutline, logInOutline, optionsOutline } from 'ionicons/icons';
 import './Home.css';
+import alienLifeFreqLogo from '../assets/images/alienlifefreqapp.png';
 
 const Extras: React.FC = () => {
   const navigation = useIonRouter();
@@ -26,7 +27,7 @@ const Extras: React.FC = () => {
         <IonToolbar className="toolbar">
           <div className="logo-title-container">
             <IonTitle className="title">Alien Life Frequency</IonTitle>
-            <img src='./images/alienlifefreqapp.png' alt="image" className="logo" />
+            <img src={alienLifeFreqLogo} alt="Logo" className="logo" />
           </div>
         </IonToolbar>
       </IonHeader>
@@ -37,26 +38,11 @@ const Extras: React.FC = () => {
             <IonCardTitle>About the Band</IonCardTitle>
           </IonCardHeader>
           <IonCardContent>
-           <p>We are Alien Life Frequency, Tab on bass and Francesco on keyboard, original beats, effects, and video. Sometimes we may have free-style, impromptu videos posted. Our music is original, created beat by beat and copyrighted. We provide an audio-visual creative experience. Our music is inspired by the universe and life beyond our own.</p>
+            <p>We are Alien Life Frequency, Tab on bass and Francesco on keyboard, original beats, effects, and video. Sometimes we may have free-style, impromptu videos posted. Our music is original, created beat by beat and copyrighted. We provide an audio-visual creative experience. Our music is inspired by the universe and life beyond our own.</p>
           </IonCardContent>
         </IonCard>
 
-        <IonCard>
-          <IonCardHeader>
-            <IonCardTitle>Admin Login</IonCardTitle>
-          </IonCardHeader>
-          <IonCardContent>
-            <IonItem>
-              <IonLabel position="floating">Username</IonLabel>
-              <IonInput value={username} onIonChange={e => setUsername(e.detail.value!)}></IonInput>
-            </IonItem>
-            <IonItem>
-              <IonLabel position="floating">Password</IonLabel>
-              <IonInput type="password" value={password} onIonChange={e => setPassword(e.detail.value!)}></IonInput>
-            </IonItem>
-            <IonButton expand="block" onClick={handleLogin}>Login</IonButton>
-          </IonCardContent>
-        </IonCard>
+        
 
         <IonCard>
           <IonCardHeader>
@@ -107,16 +93,11 @@ const Extras: React.FC = () => {
           </IonCardContent>
         </IonCard>
 
-        <IonAlert
-          isOpen={showAlert}
-          onDidDismiss={() => setShowAlert(false)}
-          header={'Login Failed'}
-          message={'Invalid username or password.'}
-          buttons={['OK']}
-        />
+       
       </IonContent>
     </IonPage>
   );
 };
 
 export default Extras;
+
