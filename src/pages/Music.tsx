@@ -4,7 +4,7 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import { heart, heartOutline } from 'ionicons/icons';
 import 'swiper/css';
 import './Music.css';
-import newGalaxyBackground from '../assets/newgalaxy.jpg';
+import alienLifeFreqLogo from '../assets/images/alienlifefreqapp.png';
 
 const Music: React.FC = () => {
   const [activeIndex, setActiveIndex] = useState(0);
@@ -63,23 +63,18 @@ const Music: React.FC = () => {
         <IonToolbar className="toolbar">
           <div className="logo-title-container">
             <IonTitle className="title">Alien Life Frequency</IonTitle>
-            <img src='./images/alienlifefreqapp.png' alt="Alien Life Frequency Logo" className="logo" />
+            <img src={alienLifeFreqLogo} alt="Logo" className="logo" />
           </div>
         </IonToolbar>
       </IonHeader>
-      <IonContent 
-        fullscreen 
-        style={{ 
-          background: `url(${newGalaxyBackground}) no-repeat center center fixed`, 
-          backgroundSize: 'cover' 
-        }}
-      >
+      <IonContent fullscreen>
         <Swiper
           spaceBetween={0}
           slidesPerView={1}
           onSlideChange={handleSlideChange}
           mousewheel={true}
           resistanceRatio={0}
+          
         >
           {videos.map((video, index) => (
             <SwiperSlide key={`slide_${index}`}>
@@ -181,5 +176,7 @@ const Music: React.FC = () => {
 };
 
 export default Music;
+
+
 
 
