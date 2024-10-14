@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { IonContent, IonModal, IonHeader, IonPage, IonTitle, IonToolbar, IonCard, IonCardContent, IonCardHeader, IonCardTitle, IonButton, IonIcon } from '@ionic/react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { heart, heartOutline } from 'ionicons/icons';
@@ -23,6 +23,19 @@ const Music: React.FC = () => {
     { id: 'video8', title: 'Groovin in Space', url: 'https://www.youtube.com/embed/TRWWKuMEUTw' },
     { id: 'video9', title: 'Lost Memories', url: 'https://www.youtube.com/embed/CSOaFbPBLMI' },
   ];
+
+  // Load favorites from localStorage when the component mounts
+  useEffect(() => {
+    const savedFavorites = localStorage.getItem('favorites');
+    if (savedFavorites) {
+      setFavorites(JSON.parse(savedFavorites));
+    }
+  }, []);
+
+  // Save favorites to localStorage whenever the favorites state changes
+  useEffect(() => {
+    localStorage.setItem('favorites', JSON.stringify(favorites));
+  }, [favorites]);
 
   const handleSlideChange = (swiper: any) => {
     setActiveIndex(swiper.activeIndex);
@@ -74,7 +87,6 @@ const Music: React.FC = () => {
           onSlideChange={handleSlideChange}
           mousewheel={true}
           resistanceRatio={0}
-          
         >
           {videos.map((video, index) => (
             <SwiperSlide key={`slide_${index}`}>
@@ -99,7 +111,6 @@ const Music: React.FC = () => {
                 <IonButton className='favorite-button' fill="clear" onClick={() => toggleFavorite(video.id)}>
                   <IonIcon icon={isFavorite(video.id) ? heart : heartOutline} />
                 </IonButton>
-                
               </IonCard>
             </SwiperSlide>
           ))}
