@@ -1,25 +1,13 @@
 import React, { useState } from 'react';
-import { IonContent, IonInput, IonButton, IonPage, IonHeader, IonToolbar, IonMenuButton, IonButtons, IonTitle, IonAlert, useIonRouter, IonCard, IonCardHeader, IonCardTitle, IonCardContent, IonItem, IonLabel, IonList, IonToggle, IonIcon } from '@ionic/react';
-import { callOutline, helpCircleOutline, informationCircleOutline, logInOutline, optionsOutline } from 'ionicons/icons';
+import { IonContent, IonPage, IonHeader, IonToolbar, IonTitle, IonCard, IonCardHeader, IonCardTitle, IonCardContent, IonItem, IonLabel, IonIcon } from '@ionic/react';
+import { chevronDownOutline, chevronUpOutline, mailOutline, helpCircleOutline } from 'ionicons/icons';
 import './Home.css';
 import alienLifeFreqLogo from '../assets/images/alienlifefreqapp.png';
 
 const Extras: React.FC = () => {
-  const navigation = useIonRouter();
-  const [username, setUsername] = useState<string>('');
-  const [password, setPassword] = useState<string>('');
-  const [showAlert, setShowAlert] = useState<boolean>(false);
-  
-  const handleLogin = () => {
-    // Perform your login logic here
-    // For demonstration purposes, I'm just checking if username and password are 'admin'
-    if (username === 'admin' && password === 'adminpass!') {
-      // Redirect to home page or perform necessary actions upon successful login
-      navigation.push('/', 'forward', 'replace');
-    } else {
-      setShowAlert(true);
-    }
-  };
+  const [faq1Expanded, setFaq1Expanded] = useState<boolean>(false);
+  const [faq2Expanded, setFaq2Expanded] = useState<boolean>(false);
+  const [faq3Expanded, setFaq3Expanded] = useState<boolean>(false);
 
   return (
     <IonPage>
@@ -42,23 +30,17 @@ const Extras: React.FC = () => {
           </IonCardContent>
         </IonCard>
 
-        
-
         <IonCard>
           <IonCardHeader>
             <IonCardTitle>Preferences</IonCardTitle>
           </IonCardHeader>
           <IonCardContent>
-            <IonList>
-              <IonItem>
-                <IonLabel>Enable Notifications</IonLabel>
-                <IonToggle slot="end" />
-              </IonItem>
-              <IonItem>
-                <IonLabel>Dark Mode</IonLabel>
-                <IonToggle slot="end" />
-              </IonItem>
-            </IonList>
+            <IonItem>
+              <IonLabel>Enable Notifications</IonLabel>
+            </IonItem>
+            <IonItem>
+              <IonLabel>Dark Mode</IonLabel>
+            </IonItem>
           </IonCardContent>
         </IonCard>
 
@@ -68,32 +50,52 @@ const Extras: React.FC = () => {
           </IonCardHeader>
           <IonCardContent>
             <IonItem>
-              <IonIcon icon={callOutline} slot="start" />
-              <IonLabel>(123) 456-7890</IonLabel>
-            </IonItem>
-            <IonItem>
-              <IonLabel>Email: contact@alienlifefrequency.com</IonLabel>
+              <IonIcon icon={mailOutline} slot="start" />
+              <IonLabel>contact@alienlifefrequency.com</IonLabel>
             </IonItem>
           </IonCardContent>
         </IonCard>
 
+        {/* FAQ Section */}
         <IonCard>
           <IonCardHeader>
-            <IonCardTitle>Help</IonCardTitle>
+            <IonCardTitle>FAQ</IonCardTitle>
           </IonCardHeader>
           <IonCardContent>
-            <IonItem>
+            <IonItem button onClick={() => setFaq1Expanded(!faq1Expanded)}>
               <IonIcon icon={helpCircleOutline} slot="start" />
-              <IonLabel>Frequently Asked Questions</IonLabel>
+              <IonLabel>How can I listen to Alien Life Frequency?</IonLabel>
+              <IonIcon icon={faq1Expanded ? chevronUpOutline : chevronDownOutline} slot="end" />
             </IonItem>
-            <IonItem>
-              <IonIcon icon={informationCircleOutline} slot="start" />
-              <IonLabel>Support</IonLabel>
+            {faq1Expanded && (
+              <IonItem>
+                <IonLabel>By visiting the Music tab on this app, you can access our video player. Our music is also available on our YouTube, Facebook, and all major streaming platforms.</IonLabel>
+              </IonItem>
+            )}
+
+            <IonItem button onClick={() => setFaq2Expanded(!faq2Expanded)}>
+              <IonIcon icon={helpCircleOutline} slot="start" />
+              <IonLabel>How often does the band post new content?</IonLabel>
+              <IonIcon icon={faq2Expanded ? chevronUpOutline : chevronDownOutline} slot="end" />
             </IonItem>
+            {faq2Expanded && (
+              <IonItem>
+                <IonLabel>We aim to post new content weekly, with all our new videos being uploaded to YouTube. Follow us on Facebook to keep up to date when a new video releases.</IonLabel>
+              </IonItem>
+            )}
+
+            <IonItem button onClick={() => setFaq3Expanded(!faq3Expanded)}>
+              <IonIcon icon={helpCircleOutline} slot="start" />
+              <IonLabel>Can you tell me more about this app and its creation?</IonLabel>
+              <IonIcon icon={faq3Expanded ? chevronUpOutline : chevronDownOutline} slot="end" />
+            </IonItem>
+            {faq3Expanded && (
+              <IonItem>
+                <IonLabel>This app was created by three senior developers attending SIUE: Carter McClure, Sophia Licko, Gautam Aneja. This app will continue to be updated with new videos and annoucements as the band continues to releases more content! </IonLabel>
+              </IonItem>
+            )}
           </IonCardContent>
         </IonCard>
-
-       
       </IonContent>
     </IonPage>
   );
